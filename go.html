@@ -1,0 +1,42 @@
+<script type="text/x-red" data-template-name="go">
+   There is no configuration for this node
+</script>
+<script type="text/x-red" data-help-name="go">
+    <p>This node sends a timestamp in <b>msg.payload</b> each time you click it's button</p>
+</script>
+<script type="text/javascript">
+   RED.nodes.registerType('go',{
+        category: 'input',
+        defaults: {},
+        label: function() {
+            return "go";
+        },
+        color:"#a6bbcf",
+        inputs:0,
+        outputs:1,
+        icon: "arrow-in.png",
+		button: {
+            onclick: function() {
+                $.ajax({
+                    url: "inject/"+this.id,
+                    type:"POST",
+                    success: function(resp) {
+                        RED.notify("Successfully injected: timestamp","success");
+                    },
+                    error: function(jqXHR,textStatus,errorThrown) {
+                        if (jqXHR.status == 404) {
+                            RED.notify("<strong>Error</strong>: go node not deployed","error");
+                        } else if (jqXHR.status == 500) {
+                            RED.notify("<strong>Error</strong>: go failed, see log for details.","error");
+                        } else if (jqXHR.status == 0) {
+                            RED.notify("<strong>Error</strong>: no response from server","error");
+                        } else {
+                            RED.notify("<strong>Error</strong>: unexpected error: ("+jqXHR.status+") "+textStatus,"error");
+                        }
+                    }
+                });
+            }
+        }
+	});
+        
+</script>
