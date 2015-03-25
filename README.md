@@ -2,4 +2,4 @@
 
 ## Presentation
 
-This node a a simplified version of the inject one. It sends a timestamp to the following node.
+This node a a simplified version of the inject one. It sends a blank string to the following node.
