@@ -4,7 +4,7 @@ module.exports = function(RED) {
         RED.nodes.createNode(this,config);
         var node = this;
         this.on("input",function(msg) {
-            msg.payload = Date.now();
+            msg.payload = "";
             this.send(msg);
             msg = null;
         });
