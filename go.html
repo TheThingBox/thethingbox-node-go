@@ -1,27 +1,56 @@
+<!--
+
+Modified for the Thingbox
+Digital Airways 2015
+
+
+-->
+
+<!--
+  Copyright 2013,2015 IBM Corp.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
 <script type="text/x-red" data-template-name="go">
-   There is no configuration for this node
+	<div class="form-row">
+		<label for="node-input-name"><i class = "icon-tag"></i> <span data-i18n="go.name"></span></label>
+		<input type="text" id="node-input-name" data-i18n="[placeholder]go.name">
+	</div>
 </script>
 <script type="text/x-red" data-help-name="go">
-    <p>This node sends blank in <b>msg.payload</b> each time you click it's button</p>
+    <p>This node triggers a flow each time you click it's button.</p>
 </script>
 <script type="text/javascript">
    RED.nodes.registerType('go',{
         category: 'input',
-        defaults: {},
-        label: function() {
-            return "go";
-        },
         color:"#a6bbcf",
+        defaults: {
+			name:{value:"",}
+		},
+        label: function() {
+            return this.name||"Go";
+        },
         inputs:0,
         outputs:1,
-        icon: "arrow-in.png",
+        icon: "inject.png",
 		button: {
             onclick: function() {
                 $.ajax({
                     url: "inject/"+this.id,
                     type:"POST",
                     success: function(resp) {
-                        RED.notify("Successfully injected: timestamp","success");
+                        RED.notify("Successfully launched","success");
                     },
                     error: function(jqXHR,textStatus,errorThrown) {
                         if (jqXHR.status == 404) {

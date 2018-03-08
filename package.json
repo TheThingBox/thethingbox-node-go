@@ -1,0 +1,25 @@
+{
+  "name": "thethingbox-node-go",
+  "version": "0.0.1",
+  "description": "This node is a simplified version of the inject node, modified for thethingbox project.",
+  "node-red": {
+      "nodes": {
+          "go": "go.js"
+      }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheThingBox/thethingbox-node-go"
+  },
+  "keywords": [
+    "go",
+    "inject",
+    "thethingbox"
+  ],
+  "author": "http://www.digitalairways.com/",
+  "license": "http://www.wtfpl.net",
+  "bugs": {
+    "url": "https://github.com/TheThingBox/thethingbox-node-go/issues"
+  },
+  "homepage": "https://github.com/TheThingBox/thethingbox-node-go"
+}
