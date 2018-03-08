@@ -1,5 +1,5 @@
 {
-  "name": "thethingbox-node-go",
+  "name": "ttb-node-go",
   "version": "0.0.1",
   "description": "This node is a simplified version of the inject node, modified for thethingbox project.",
   "node-red": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/TheThingBox/thethingbox-node-go"
+    "url": "https://github.com/TheThingBox/ttb-node-go"
   },
   "keywords": [
     "go",
@@ -19,7 +19,7 @@
   "author": "http://www.digitalairways.com/",
   "license": "http://www.wtfpl.net",
   "bugs": {
-    "url": "https://github.com/TheThingBox/thethingbox-node-go/issues"
+    "url": "https://github.com/TheThingBox/ttb-node-go/issues"
   },
-  "homepage": "https://github.com/TheThingBox/thethingbox-node-go"
+  "homepage": "https://github.com/TheThingBox/ttb-node-go"
 }
